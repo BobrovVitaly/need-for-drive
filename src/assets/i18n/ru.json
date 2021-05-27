@@ -1,0 +1,11 @@
+{
+  "GENERAL": {
+    "TITLE": "Need for drive"
+  },
+  "MENU SECTIONS": {
+    "parking": "парковка",
+    "insurance": "страховка",
+    "petrol": "бензин",
+    "service": "обслуживание"
+  }
+}

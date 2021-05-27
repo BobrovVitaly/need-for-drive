@@ -1,0 +1,84 @@
+@import 'src/styles/variables';
+@import "src/styles/mixins";
+
+.main-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.col1 {
+  background-color: $main-black;
+  height: 100%;
+  width: 45px;
+}
+
+.col2 {
+  background-color: blue;
+  height: 100%;
+  width: 50%;
+  max-width: 100%;
+}
+
+.col3 {
+  background-color: red;
+  height: 100%;
+  width: 50%;
+  max-width: 100%;
+}
+
+.mat-sidenav {
+  width: calc(50% + 22.5px);
+  background: $main-black;
+}
+
+@media (max-width: 400px) {
+  .col1 {
+    display: none;
+  }
+  .mat-sidenav {
+    width: 100%;
+  }
+}
+
+@media (max-width: 800px) {
+  .col3 {
+    display: none;
+  }
+  .col2 {
+    width: 100%;
+  }
+}
+
+.menu-button {
+  position: absolute;
+  color: white;
+}
+
+.menu-button-close {
+  position: absolute;
+  color: white;
+}
+
+.mat-sidenav-content {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+
+.sections-container {
+  position: relative;
+  top: calc(50% - 100px);
+}
+
+.section {
+  left: 20%;
+  color: $main-green;
+  &:hover {
+    filter: brightness(90%);
+  }
+}
+
+
