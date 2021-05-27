@@ -3,11 +3,13 @@
     <button mat-icon-button (click)="sidenav.toggle()" class="menu-button-close">
       <mat-icon>close</mat-icon>
     </button>
-    <mat-selection-list multiple="false" class="sections-container">
-      <mat-list-option *ngFor="let section of sections" class="section">
-        {{'MENU SECTIONS.parking'}}
-      </mat-list-option>
-    </mat-selection-list>
+    <div class="sidenav-inner-container">
+      <mat-selection-list multiple="false">
+        <mat-list-option *ngFor="let section of sections" class="section">
+          {{section.title}}
+        </mat-list-option>
+      </mat-selection-list>
+    </div>
   </mat-sidenav>
   <mat-sidenav-content class="mat-sidenav-content">
     <button mat-icon-button (click)="sidenav.toggle()" class="menu-button">

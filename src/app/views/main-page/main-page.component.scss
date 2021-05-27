@@ -69,11 +69,17 @@
 }
 
 .sections-container {
+
+}
+
+.sidenav-inner-container {
   position: relative;
   top: calc(50% - 100px);
 }
 
 .section {
+  @include getFontStyle(normal, 500, 32px, 37.5px);
+  max-width: min-content;
   left: 20%;
   color: $main-green;
   &:hover {
