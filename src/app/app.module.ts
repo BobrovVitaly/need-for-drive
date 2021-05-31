@@ -12,16 +12,19 @@ import {MatListModule} from '@angular/material/list';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import {HoverOverElementDirective} from './directives/hoverOverElement.directive';
+import {MatMenuModule} from '@angular/material/menu';
 
 export function HttpLoaderFactory(httpClient: HttpClient): TranslateHttpLoader {
   return new TranslateHttpLoader(httpClient);
 }
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    MainPageComponent
-  ],
+    declarations: [
+        AppComponent,
+        MainPageComponent,
+        HoverOverElementDirective
+    ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -30,6 +33,7 @@ export function HttpLoaderFactory(httpClient: HttpClient): TranslateHttpLoader {
     MatIconModule,
     MatSidenavModule,
     MatListModule,
+    MatMenuModule,
     HttpClientModule,
     TranslateModule.forRoot({
       loader: {
