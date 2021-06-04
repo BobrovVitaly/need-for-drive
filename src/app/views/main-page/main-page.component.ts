@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {BreakpointObserver, Breakpoints} from '@angular/cdk/layout';
 import {TranslateService} from '@ngx-translate/core';
-import {ILanguage, ISection} from '../../interfaces/interfaces';
+import {ILanguage, ISection, ISlider} from '../../interfaces/interfaces';
 import {BehaviorSubject} from 'rxjs';
 
 @Component({
@@ -16,6 +16,7 @@ export class MainPageComponent implements OnInit {
     value: 'ru',
     title: 'rus'
   });
+  public sliders: ISlider[] | undefined;
 
   constructor(public translate: TranslateService) {
   }
@@ -26,6 +27,20 @@ export class MainPageComponent implements OnInit {
     this.currentLanguage.subscribe(language => {
       this.setSections(language.value);
     }, error => console.log(error));
+    this.sliders = [
+      {
+        img: 'assets/images/parking.jpg'
+      },
+      {
+        img: 'assets/images/insurance.jpg'
+      },
+      {
+        img: 'assets/images/petrol.jpg'
+      },
+      {
+        img: 'assets/images/service.jpg'
+      }
+    ];
   }
 
   public setLanguage(languageValue: string = 'ru'): void {
@@ -49,7 +64,7 @@ export class MainPageComponent implements OnInit {
 
   private setSections(language: string = 'ru'): void {
     this.translate.use(language);
-    this.translate.get('MENU SECTIONS').subscribe(sections => {
+    this.translate.get('MAIN PAGE.MENU SECTIONS').subscribe(sections => {
       this.sections = Object.entries(sections).map(section => {
         return {
           value: section[0],

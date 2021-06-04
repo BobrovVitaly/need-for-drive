@@ -2,10 +2,15 @@
   "GENERAL": {
     "TITLE": "Need for drive"
   },
-  "MENU SECTIONS": {
-    "parking": "парковка",
-    "insurance": "страховка",
-    "petrol": "бензин",
-    "service": "обслуживание"
+  "MAIN PAGE": {
+    "MENU SECTIONS": {
+      "parking": "парковка",
+      "insurance": "страховка",
+      "petrol": "бензин",
+      "service": "обслуживание"
+    },
+    "HEADER": "Каршеринг",
+    "DESCRIPTION": "Поминутная аренда авто твоего города",
+    "BOOKING BUTTON": "Забронировать"
   }
 }

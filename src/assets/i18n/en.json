@@ -2,10 +2,15 @@
   "GENERAL": {
     "TITLE": "Need for drive"
   },
-  "MENU SECTIONS": {
-    "parking": "parking",
-    "insurance": "insurance",
-    "petrol": "petrol",
-    "service": "service"
+  "MAIN PAGE": {
+    "MENU SECTIONS": {
+      "parking": "parking",
+      "insurance": "insurance",
+      "petrol": "petrol",
+      "service": "service"
+    },
+    "HEADER": "Car sharing",
+    "DESCRIPTION": "Per-minute car rental in your city",
+    "BOOKING BUTTON": "Book now"
   }
 }
