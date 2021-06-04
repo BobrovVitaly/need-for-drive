@@ -1,0 +1,14 @@
+@import 'src/styles/variables';
+@import "src/styles/mixins";
+
+.mat-menu-languages-container {
+  z-index: 2;
+  position: fixed;
+  left: 0;
+  bottom: 5vh;
+  color: $main-green;
+}
+
+.select-languages-button {
+  color: $main-green;
+}

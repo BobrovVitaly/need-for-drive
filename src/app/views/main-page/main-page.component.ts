@@ -23,28 +23,30 @@ export class MainPageComponent implements OnInit {
   ngOnInit(): void {
     this.translate.addLangs(['ru', 'en']);
     this.translate.setDefaultLang('ru');
-    this.currentLanguage.subscribe(language => {
-      this.setSections(language.value);
-    }, error => console.log(error));
-  }
-
-  public setLanguage(languageValue: string = 'ru'): void {
-    switch (languageValue) {
-      case 'ru': {
-        this.currentLanguage.next({
-          value: 'ru',
-          title: 'Rus'
-        });
-        break;
-      }
-      case 'en': {
-        this.currentLanguage.next({
-          value: 'en',
-          title: 'Eng'
-        });
-        break;
-      }
-    }
+    this.sections = [
+      {
+        value: 'parking',
+        title: this.translate.instant('MAIN PAGE.menu sections.parking.title')
+      },
+      {
+        value: 'insurance',
+        title: '',
+      },
+      {
+        value: 'petrol',
+        title: '',
+      },
+      {
+        value: 'service',
+        title: '',
+      },
+    ];
+    this.translate.setDefaultLang('ru');
+    this.translate.stream('MAIN PAGE.menu sections').subscribe(sections => {
+      this.sections.map(section => {
+        section.title = sections[section.value].title;
+      });
+    });
   }
 
   private setSections(language: string = 'ru'): void {

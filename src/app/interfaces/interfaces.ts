@@ -1,6 +1,6 @@
 export interface ISection {
   value: string;
-  title: string;
+  title?: string;
 }
 
 export interface ILanguage {
@@ -14,6 +14,6 @@ export interface ISlider {
 }
 
 export interface IMenuSectionSlider extends ISlider {
-  title: string;
-  description: string;
+  title?: string;
+  description?: string;
 }

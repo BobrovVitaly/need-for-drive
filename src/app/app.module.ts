@@ -16,6 +16,7 @@ import {HoverOverElementDirective} from './directives/hoverOverElement.directive
 import {MatMenuModule} from '@angular/material/menu';
 import { MenuSliderComponent } from './views/main-page/menu-slider/menu-slider.component';
 import { BookingComponent } from './views/main-page/booking/booking.component';
+import { LanguagesControlComponent } from './shared/components/languages-control/languages-control.component';
 
 export function HttpLoaderFactory(httpClient: HttpClient): TranslateHttpLoader {
   return new TranslateHttpLoader(httpClient);
@@ -27,7 +28,8 @@ export function HttpLoaderFactory(httpClient: HttpClient): TranslateHttpLoader {
         MainPageComponent,
         HoverOverElementDirective,
         MenuSliderComponent,
-        BookingComponent
+        BookingComponent,
+        LanguagesControlComponent
     ],
   imports: [
     BrowserModule,

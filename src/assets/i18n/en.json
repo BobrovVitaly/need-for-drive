@@ -3,7 +3,7 @@
     "TITLE": "Need for drive"
   },
   "MAIN PAGE": {
-    "MENU SECTIONS": {
+    "menu sections": {
       "parking": {
         "title": "parking",
         "description": "Leave your car in paid city parking lots and permitted places without breaking traffic rules, as well as at airports."
@@ -25,6 +25,7 @@
       "header": "Car sharing",
       "description": "Per-minute car rental in your city",
       "booking button": "Book now"
-    }
+    },
+    "more information button": "more information"
   }
 }
