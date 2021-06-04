@@ -16,7 +16,6 @@ export class MainPageComponent implements OnInit {
     value: 'ru',
     title: 'rus'
   });
-  public sliders: ISlider[] | undefined;
 
   constructor(public translate: TranslateService) {
   }
@@ -27,20 +26,6 @@ export class MainPageComponent implements OnInit {
     this.currentLanguage.subscribe(language => {
       this.setSections(language.value);
     }, error => console.log(error));
-    this.sliders = [
-      {
-        img: 'assets/images/parking.jpg'
-      },
-      {
-        img: 'assets/images/insurance.jpg'
-      },
-      {
-        img: 'assets/images/petrol.jpg'
-      },
-      {
-        img: 'assets/images/service.jpg'
-      }
-    ];
   }
 
   public setLanguage(languageValue: string = 'ru'): void {

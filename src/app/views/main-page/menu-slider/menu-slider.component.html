@@ -1,0 +1,7 @@
+<div *ngIf="sliders[2]" class="slid-left">
+  <img src="assets/icons/slid-left-icon.svg">
+</div>
+<img [src]="sliders[2]?.img || 'assets/images/image-not-found.jpg'" class="slide-image">
+<div *ngIf="sliders[2]" class="slid-right">
+  <img src="assets/icons/slid-right-icon.svg">
+</div>

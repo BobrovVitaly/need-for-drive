@@ -4,13 +4,27 @@
   },
   "MAIN PAGE": {
     "MENU SECTIONS": {
-      "parking": "parking",
-      "insurance": "insurance",
-      "petrol": "petrol",
-      "service": "service"
+      "parking": {
+        "title": "parking",
+        "description": "Leave your car in paid city parking lots and permitted places without breaking traffic rules, as well as at airports."
+      },
+      "insurance": {
+        "title": "insurance",
+        "description": "Full insurance car insurance"
+      },
+      "petrol": {
+        "title": "petrol",
+        "description": "A full tank at any gas station in the city at our expense"
+      },
+      "service": {
+        "title": "service",
+        "description": "The car undergoes weekly maintenance"
+      }
     },
-    "HEADER": "Car sharing",
-    "DESCRIPTION": "Per-minute car rental in your city",
-    "BOOKING BUTTON": "Book now"
+    "booking": {
+      "header": "Car sharing",
+      "description": "Per-minute car rental in your city",
+      "booking button": "Book now"
+    }
   }
 }
