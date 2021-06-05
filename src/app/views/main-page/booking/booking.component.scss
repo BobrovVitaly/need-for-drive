@@ -1,0 +1,132 @@
+@import 'src/styles/variables';
+@import "src/styles/mixins";
+
+.booking {
+  &-section {
+    padding: 32px 5%;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "header header2"
+                         "main main"
+                         "footer footer2"
+  }
+  &-header {
+    &-left {
+      grid-area: header;
+      @include getFontStyle(normal, 700, 30px, 36px);
+      color: $main-green;
+    }
+    &-right {
+      grid-area: header2;
+      @include getFontStyle(normal, 400, 14px, 16px);
+      color: $main-gray;
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+  &-main {
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+    &-row1 {
+      @include getFontStyle(normal, 700, 70px, 66px);
+      color: $main-black;
+    }
+    &-row2 {
+      margin-top: 4px;
+      @include getFontStyle(normal, 700, 70px, 66px);
+      color: $main-green;
+    }
+    &-row3 {
+      margin-top: 34px;
+      @include getFontStyle(normal, 300, 26px, 30px);
+      color: $main-gray;
+    }
+    &-button {
+      margin-top: 60px;
+      height: 48px;
+      width: 250px;
+      background: linear-gradient(90deg, $main-green, 2.61%, #039F67 112.6%);
+      border-radius: 8px;
+      @include getFontStyle(normal, 500, 18px, 22px);
+      color: white;
+    }
+  }
+  &-footer-left {
+    grid-area: footer;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    @include getFontStyle(normal, 500, 18px, 22px);
+    color: $main-gray;
+  }
+  &-footer-right {
+    grid-area: footer2;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    @include getFontStyle(normal, 500, 18px, 22px);
+    color: $main-black;
+  }
+}
+
+@media (max-width: 500px) {
+  .booking {
+    &-section {
+      padding: 16px 5%;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+    }
+    &-header-left {
+      display: flex;
+      justify-content: flex-end;
+    }
+    &-main {
+      &-row1 {
+        @include getFontStyle(normal, 700, 32px, 32px);
+        margin-top: 5vh;
+      }
+      &-row2 {
+        margin-top: 1vh;
+        @include getFontStyle(normal, 700, 32px, 32px);
+        color: $main-green;
+      }
+      &-row3 {
+        margin-top: 3vh;
+        @include getFontStyle(normal, 300, 18px, 22px);
+        color: $main-gray;
+      }
+      &-button {
+        margin-top: 6vh;
+        height: 48px;
+        width: 110%;
+        right: 5%;
+        border-radius: 0;
+        @include getFontStyle(normal, 500, 18px, 22px);
+        color: white;
+      }
+    }
+    &-footer-left {
+      z-index: 2;
+      display: flex;
+      justify-content: flex-end;
+      @include getFontStyle(normal, 400, 13px, 16px);
+      color: #EEEEEE;
+    }
+    &-footer-right {
+      z-index: 2;
+      height: min-content;
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+      margin-top: auto;
+      @include getFontStyle(normal, 400, 13px, 16px);
+      color: $main-green;
+    }
+  }
+}
