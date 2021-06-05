@@ -37,7 +37,6 @@ export class MenuSliderComponent implements OnInit {
     ];
     this.translate.setDefaultLang('ru');
     this.translate.stream('MAIN PAGE.menu sections').subscribe(sections => {
-      console.log(sections);
       this.sliders.map(slider => {
         slider.title = sections[slider.route].title;
         slider.description = sections[slider.route].description;
@@ -49,12 +48,12 @@ export class MenuSliderComponent implements OnInit {
     if (this.state.value > 0) {
       this.state.next(this.state.value - 1);
     } else {
-      this.state.next(2);
+      this.state.next(3);
     }
   }
 
   public slideRight(): void {
-    if (this.state.value <= 2) {
+    if (this.state.value < 3) {
       this.state.next(this.state.value + 1);
     }
     else {

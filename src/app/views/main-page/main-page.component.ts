@@ -26,7 +26,7 @@ export class MainPageComponent implements OnInit {
     this.sections = [
       {
         value: 'parking',
-        title: this.translate.instant('MAIN PAGE.menu sections.parking.title')
+        title: '',
       },
       {
         value: 'insurance',
