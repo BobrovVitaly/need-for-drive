@@ -1,1 +1,24 @@
-<app-main-page></app-main-page>
+<mat-sidenav-container class="main-container">
+
+  <mat-sidenav #sidenav class="mat-sidenav">
+    <app-main-menu (openMenuEmitter)="sidenav.toggle()"></app-main-menu>
+  </mat-sidenav>
+
+  <mat-sidenav-content class="mat-sidenav-content">
+    <div class="menu-section"></div>
+    <button mat-icon-button (click)="sidenav.toggle()" class="menu-button">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <div class="content-wrapper">
+      <router-outlet></router-outlet>
+      <div class="mobile-footer"></div>
+    </div>
+    <div class="mat-menu-languages-container">
+      <app-languages-control></app-languages-control>
+    </div>
+  </mat-sidenav-content>
+
+</mat-sidenav-container>
+
+
+<!--<app-main-page></app-main-page>-->

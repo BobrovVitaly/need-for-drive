@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {BehaviorSubject} from 'rxjs';
-import {ILanguage} from '../../../interfaces/interfaces';
+import {ILanguage} from '../../interfaces/interfaces';
 import {TranslateService} from '@ngx-translate/core';
 
 @Component({

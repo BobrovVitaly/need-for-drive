@@ -1,5 +1,26 @@
-@import 'src/styles/variables';
-@import "src/styles/mixins";
+@import '../../../styles/variables';
+@import "../../../styles/mixins";
+
+.main-page-wrapper {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+}
+
+.slider-section-wrapper {
+  height: 100%;
+  width: 50%;
+}
+
+.booking-section-wrapper {
+  height: 100%;
+  width: 50%;
+}
+
+.location-icon {
+  margin-right: 5px;
+}
 
 .booking {
   &-section {
@@ -74,7 +95,93 @@
   }
 }
 
+.slide-image {
+  width: 100%;
+  height: 100%;
+}
+
+.slid-left {
+  cursor: pointer;
+  height: 100%;
+  width: 64px;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:hover {
+    background: #0EC261;
+    opacity: 20%;
+  }
+}
+
+.slid-right {
+  cursor: pointer;
+  height: 100%;
+  width: 64px;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  right: 0;
+  top: 0;
+  &:hover {
+    background: #0EC261;
+    opacity: 20%;
+  }
+}
+
+.slider-card-information {
+  position: absolute;
+  top: 30vh;
+  width: 30vw;
+  height: min-content;
+  display: flex;
+  flex-direction: column;
+  margin-left: 100px;
+}
+
+.more-information-button {
+  background: linear-gradient(90deg, #13493F 0%, #0C7B1B 100%);
+  border-radius: 4px;
+  color: #EEEEEE;
+  @include getFontStyle(normal, 500, 18px, 21px);
+  padding: 14px 40px;
+  width: min-content;
+}
+
+.slider-card-description {
+  margin-top: 8px;
+  margin-bottom: 32px;
+  color: #EEEEEE;
+  @include getFontStyle(normal, 300, 24px, 24px);
+}
+
+.slider-card-title {
+  color: #FFFFFF;
+  @include getFontStyle(normal, 500, 40px, 47px);
+}
+
+
+
 @media (max-width: 500px) {
+  .booking-section-wrapper {
+    width: 100%;
+  }
+  .menu-section {
+    display: none;
+  }
+  .slider-section-wrapper {
+    display: none;
+  }
+  .mat-sidenav {
+    width: 100%;
+  }
+  .menu-button {
+    color: $main-black;
+  }
+  .mat-menu-languages-container {
+    bottom: 10px;
+  }
   .booking {
     &-section {
       padding: 16px 5%;
@@ -130,3 +237,18 @@
     }
   }
 }
+
+@media (min-width: 500px) and (max-width: 1000px) {
+  .slider-section-wrapper {
+    display: none;
+  }
+  .booking-section-wrapper {
+    width: 100%;
+  }
+  .mat-sidenav {
+    width: 100%;
+  }
+}
+
+
+

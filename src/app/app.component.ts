@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {TranslateService} from '@ngx-translate/core';
+import {ISection} from './shared/interfaces/interfaces';
 
 @Component({
   selector: 'app-root',
@@ -7,5 +9,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  title = 'need-for-drive';
 }

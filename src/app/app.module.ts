@@ -1,9 +1,7 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
-
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {MainPageComponent} from './views/main-page/main-page.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
@@ -12,11 +10,9 @@ import {MatListModule} from '@angular/material/list';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
-import {HoverOverElementDirective} from './directives/hoverOverElement.directive';
-import {MatMenuModule} from '@angular/material/menu';
-import { MenuSliderComponent } from './views/main-page/menu-slider/menu-slider.component';
-import { BookingComponent } from './views/main-page/booking/booking.component';
-import { LanguagesControlComponent } from './shared/components/languages-control/languages-control.component';
+import {MainPageModule} from './modules/main-page/main-page.module';
+import {BookingPageModule} from './modules/booking-page/booking-page.module';
+import {SharedModule} from './shared/shared.module';
 
 export function HttpLoaderFactory(httpClient: HttpClient): TranslateHttpLoader {
   return new TranslateHttpLoader(httpClient);
@@ -25,21 +21,18 @@ export function HttpLoaderFactory(httpClient: HttpClient): TranslateHttpLoader {
 @NgModule({
     declarations: [
         AppComponent,
-        MainPageComponent,
-        HoverOverElementDirective,
-        MenuSliderComponent,
-        BookingComponent,
-        LanguagesControlComponent
     ],
   imports: [
-    BrowserModule,
+    SharedModule,
+    MainPageModule,
+    BookingPageModule,
     AppRoutingModule,
+    BrowserModule,
     BrowserAnimationsModule,
     MatButtonModule,
     MatIconModule,
     MatSidenavModule,
     MatListModule,
-    MatMenuModule,
     HttpClientModule,
     TranslateModule.forRoot({
       loader: {
@@ -47,7 +40,7 @@ export function HttpLoaderFactory(httpClient: HttpClient): TranslateHttpLoader {
         useFactory: HttpLoaderFactory,
         deps: [HttpClient]
       }
-    })
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]
