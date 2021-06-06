@@ -1,0 +1,31 @@
+{
+  "GENERAL": {
+    "TITLE": "Need for drive"
+  },
+  "MAIN PAGE": {
+    "menu sections": {
+      "parking": {
+        "title": "parking",
+        "description": "Leave your car in paid city parking lots and permitted places without breaking traffic rules, as well as at airports."
+      },
+      "insurance": {
+        "title": "insurance",
+        "description": "Full insurance car insurance"
+      },
+      "petrol": {
+        "title": "petrol",
+        "description": "A full tank at any gas station in the city at our expense"
+      },
+      "service": {
+        "title": "service",
+        "description": "The car undergoes weekly maintenance"
+      }
+    },
+    "booking": {
+      "header": "Car sharing",
+      "description": "Per-minute car rental in your city",
+      "booking button": "Book now"
+    },
+    "more information button": "more information"
+  }
+}
