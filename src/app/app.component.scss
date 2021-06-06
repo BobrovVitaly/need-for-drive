@@ -1,0 +1,73 @@
+@import 'src/styles/variables';
+@import "src/styles/mixins";
+
+.main-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.mat-sidenav {
+  width: calc(50% + 35px);
+  background: $main-black;
+}
+
+.sidenav-inner-container {
+  position: relative;
+  max-width: min-content;
+  top: calc(50% - 100px);
+  left: 15%;
+}
+
+.menu-section {
+  background-color: $main-black;
+  height: 100%;
+  width: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.menu-button {
+  color: white;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.menu-button-close {
+  color: white;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.section {
+  @include getFontStyle(normal, 500, 32px, 37.5px);
+  max-width: min-content;
+  color: white;
+  &:hover {
+    color: $main-green;
+  }
+}
+
+.emit-icons {
+  display: flex;
+  flex-direction: row;
+}
+
+.emit-icon {
+  cursor: pointer;
+  margin-top: 6vh;
+  margin-left: 16px;
+}
+
+.mat-menu-languages-container {
+  z-index: 2;
+  color: $main-green;
+  margin-bottom: 5vh;
+}
+
+.select-languages-button {
+  color: $main-green;
+}
