@@ -14,8 +14,6 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {HoverOverElementDirective} from './directives/hoverOverElement.directive';
 import {MatMenuModule} from '@angular/material/menu';
-import { MenuSliderComponent } from './views/main-page/menu-slider/menu-slider.component';
-import { BookingComponent } from './views/main-page/booking/booking.component';
 import { LanguagesControlComponent } from './shared/components/languages-control/languages-control.component';
 
 export function HttpLoaderFactory(httpClient: HttpClient): TranslateHttpLoader {
@@ -27,8 +25,6 @@ export function HttpLoaderFactory(httpClient: HttpClient): TranslateHttpLoader {
         AppComponent,
         MainPageComponent,
         HoverOverElementDirective,
-        MenuSliderComponent,
-        BookingComponent,
         LanguagesControlComponent
     ],
   imports: [

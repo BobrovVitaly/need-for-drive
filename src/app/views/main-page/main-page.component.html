@@ -1,43 +1,37 @@
-<mat-sidenav-container class="main-container">
-
-  <mat-sidenav #sidenav class="mat-sidenav">
-    <button mat-icon-button (click)="sidenav.toggle()" class="menu-button-close">
-      <mat-icon>close</mat-icon>
-    </button>
-    <div class="sidenav-inner-container">
-      <mat-selection-list multiple="false">
-        <mat-list-option *ngFor="let section of sections" class="section">
-          {{section.title}}
-        </mat-list-option>
-      </mat-selection-list>
-      <div class="emit-icons">
-        <img src="assets/icons/telegram-white-icon.svg" class="emit-icon" appHoverOverElement>
-        <img src="assets/icons/facebook-white-icon.svg" class="emit-icon" appHoverOverElement>
-        <img src="assets/icons/instagram-white-icon.svg" class="emit-icon" appHoverOverElement>
-      </div>
-    </div>
-  </mat-sidenav>
-
-  <mat-sidenav-content class="mat-sidenav-content">
-
-    <button mat-icon-button (click)="sidenav.toggle()" class="menu-button">
-      <mat-icon>menu</mat-icon>
-    </button>
-    <div class="menu-section"></div>
+<div class="main-page-wrapper">
 
     <div class="booking-section-wrapper">
-      <app-booking></app-booking>
+      <div class="booking-section">
+        <div class="booking-header-left">{{'GENERAL.TITLE' | translate}}</div>
+        <div class="booking-header-right">
+          <span class="location-icon"><img src="assets/icons/location-icon.svg"></span>
+          <span class="location-title">Ульяновск</span>
+        </div>
+        <div class="booking-main">
+          <span class="booking-main-row1">{{'GENERAL.TITLE' | translate}}</span>
+          <span class="booking-main-row2">{{'MAIN PAGE.booking.header' | translate}}</span>
+          <span class="booking-main-row3">{{'MAIN PAGE.booking.description' | translate}}</span>
+          <button class="booking-main-button" mat-button>{{'MAIN PAGE.booking.booking button' | translate}}</button>
+        </div>
+        <div class="booking-footer-right">8 (495) 234-22-44</div>
+        <div class="booking-footer-left">© 2016-2019 «Need for drive»</div>
+      </div>
     </div>
 
     <div class="slider-section-wrapper">
-      <app-menu-slider></app-menu-slider>
+      <div class="slider-card-information">
+        <span *ngIf="sliders[state.value]?.title" class="slider-card-title">{{sliders[state.value].title}}</span>
+        <span *ngIf="sliders[state.value]?.description" class="slider-card-description">{{sliders[state.value].description}}</span>
+        <button mat-button class="more-information-button">{{'MAIN PAGE.more information button' | translate}}</button>
+      </div>
+      <div *ngIf="sliders[state.value]" class="slid-left" (click)="slideLeft()">
+        <img src="assets/icons/slid-left-icon.svg">
+      </div>
+      <img [src]="sliders[state.value]?.img || 'assets/images/image-not-found.jpg'" class="slide-image">
+      <div *ngIf="sliders[state.value]" class="slid-right" (click)="slideRight()">
+        <img src="assets/icons/slid-right-icon.svg">
+      </div>
     </div>
 
-    <div class="mobile-footer"></div>
+</div>
 
-    <div class="mat-menu-languages-container">
-      <app-languages-control></app-languages-control>
-    </div>
-
-  </mat-sidenav-content>
-</mat-sidenav-container>

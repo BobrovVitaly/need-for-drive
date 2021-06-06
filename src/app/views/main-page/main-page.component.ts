@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {BreakpointObserver, Breakpoints} from '@angular/cdk/layout';
 import {TranslateService} from '@ngx-translate/core';
-import {ILanguage, ISection, ISlider} from '../../interfaces/interfaces';
+import {ILanguage, IMenuSectionSlider, ISection, ISlider} from '../../interfaces/interfaces';
 import {BehaviorSubject} from 'rxjs';
 
 @Component({
@@ -11,53 +11,54 @@ import {BehaviorSubject} from 'rxjs';
 })
 export class MainPageComponent implements OnInit {
 
-  public sections: ISection[] | undefined;
-  public currentLanguage: BehaviorSubject<ILanguage> = new BehaviorSubject<ILanguage>({
-    value: 'ru',
-    title: 'rus'
-  });
+  public sliders: IMenuSectionSlider[] | undefined;
+  public state: BehaviorSubject<number>;
 
-  constructor(public translate: TranslateService) {
-  }
+  constructor(private translate: TranslateService) { }
 
   ngOnInit(): void {
-    this.translate.addLangs(['ru', 'en']);
-    this.translate.setDefaultLang('ru');
-    this.sections = [
+    this.state = new BehaviorSubject(0);
+    this.sliders = [
       {
-        value: 'parking',
-        title: '',
+        img: 'assets/images/parking.jpg',
+        route: 'parking',
       },
       {
-        value: 'insurance',
-        title: '',
+        img: 'assets/images/insurance.jpg',
+        route: 'insurance',
       },
       {
-        value: 'petrol',
-        title: '',
+        img: 'assets/images/petrol.jpg',
+        route: 'petrol',
       },
       {
-        value: 'service',
-        title: '',
-      },
+        img: 'assets/images/service.jpg',
+        route: 'service',
+      }
     ];
     this.translate.setDefaultLang('ru');
     this.translate.stream('MAIN PAGE.menu sections').subscribe(sections => {
-      this.sections.map(section => {
-        section.title = sections[section.value].title;
+      this.sliders.map(slider => {
+        slider.title = sections[slider.route].title;
+        slider.description = sections[slider.route].description;
       });
     });
   }
 
-  private setSections(language: string = 'ru'): void {
-    this.translate.use(language);
-    this.translate.get('MAIN PAGE.MENU SECTIONS').subscribe(sections => {
-      this.sections = Object.entries(sections).map(section => {
-        return {
-          value: section[0],
-          title: section[1] as string,
-        };
-      });
-    });
+  public slideLeft(): void {
+    if (this.state.value > 0) {
+      this.state.next(this.state.value - 1);
+    } else {
+      this.state.next(3);
+    }
+  }
+
+  public slideRight(): void {
+    if (this.state.value < 3) {
+      this.state.next(this.state.value + 1);
+    }
+    else {
+      this.state.next(0);
+    }
   }
 }
