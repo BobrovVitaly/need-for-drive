@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {TranslateService} from '@ngx-translate/core';
 import {IMenuSectionSlider} from '../../shared/interfaces/interfaces';
 import {BehaviorSubject} from 'rxjs';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-main-page',
@@ -13,7 +14,9 @@ export class MainPageComponent implements OnInit {
   public sliders: IMenuSectionSlider[] | undefined;
   public state: BehaviorSubject<number>;
 
-  constructor(private translate: TranslateService) { }
+  constructor(private translate: TranslateService,
+              private router: Router) {
+  }
 
   ngOnInit(): void {
     this.state = new BehaviorSubject(0);
@@ -55,9 +58,12 @@ export class MainPageComponent implements OnInit {
   public slideRight(): void {
     if (this.state.value < 3) {
       this.state.next(this.state.value + 1);
-    }
-    else {
+    } else {
       this.state.next(0);
     }
+  }
+
+  public navigateToBooking(): void {
+    this.router.navigate(['booking']).then();
   }
 }
