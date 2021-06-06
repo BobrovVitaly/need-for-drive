@@ -1,21 +1,7 @@
 <mat-sidenav-container class="main-container">
 
   <mat-sidenav #sidenav class="mat-sidenav">
-    <button mat-icon-button (click)="sidenav.toggle()" class="menu-button-close">
-      <mat-icon>close</mat-icon>
-    </button>
-    <div class="sidenav-inner-container">
-      <mat-selection-list multiple="false">
-        <mat-list-option *ngFor="let section of sections" class="section">
-          {{section.title}}
-        </mat-list-option>
-      </mat-selection-list>
-      <div class="emit-icons">
-        <img src="assets/icons/telegram-white-icon.svg" class="emit-icon" appHoverOverElement>
-        <img src="assets/icons/facebook-white-icon.svg" class="emit-icon" appHoverOverElement>
-        <img src="assets/icons/instagram-white-icon.svg" class="emit-icon" appHoverOverElement>
-      </div>
-    </div>
+    <app-main-menu (openMenuEmitter)="sidenav.toggle()"></app-main-menu>
   </mat-sidenav>
 
   <mat-sidenav-content class="mat-sidenav-content">

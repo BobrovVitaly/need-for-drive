@@ -1,0 +1,42 @@
+@import 'src/styles/variables';
+@import "src/styles/mixins";
+
+.menu-button-close {
+  position: absolute;
+  color: white;
+  top: 10px;
+  left: 10px;
+}
+
+.emit-icons {
+  display: flex;
+  flex-direction: row;
+}
+
+.emit-icon {
+  cursor: pointer;
+  margin-top: 6vh;
+  margin-left: 16px;
+}
+
+.sidenav-inner-container {
+  position: relative;
+  max-width: min-content;
+  top: calc(50% - 100px);
+  left: 15%;
+}
+
+.section {
+  @include getFontStyle(normal, 500, 32px, 37.5px);
+  max-width: min-content;
+  color: white;
+  &:hover {
+    color: $main-green;
+  }
+}
+
+@media (max-width: 500px) {
+  .section {
+    @include getFontStyle(normal, 400, 22px, 20px);
+  }
+}

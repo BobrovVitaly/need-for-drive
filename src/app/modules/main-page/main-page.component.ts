@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {BreakpointObserver, Breakpoints} from '@angular/cdk/layout';
 import {TranslateService} from '@ngx-translate/core';
-import {ILanguage, IMenuSectionSlider, ISection, ISlider} from '../../interfaces/interfaces';
+import {IMenuSectionSlider} from '../../shared/interfaces/interfaces';
 import {BehaviorSubject} from 'rxjs';
 
 @Component({

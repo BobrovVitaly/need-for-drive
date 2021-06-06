@@ -1,5 +1,5 @@
-@import 'src/styles/variables';
-@import "src/styles/mixins";
+@import '../../../styles/variables';
+@import "../../../styles/mixins";
 
 .main-page-wrapper {
   display: flex;
@@ -178,9 +178,6 @@
   }
   .menu-button {
     color: $main-black;
-  }
-  .section {
-    @include getFontStyle(normal, 400, 22px, 20px);
   }
   .mat-menu-languages-container {
     bottom: 10px;
