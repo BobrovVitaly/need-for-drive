@@ -15,7 +15,7 @@ import {BookingPageModule} from './modules/booking-page/booking-page.module';
 import {SharedModule} from './shared/shared.module';
 
 export function HttpLoaderFactory(httpClient: HttpClient): TranslateHttpLoader {
-  return new TranslateHttpLoader(httpClient);
+  return new TranslateHttpLoader(httpClient, './assets/i18n/', '.json');
 }
 
 @NgModule({
