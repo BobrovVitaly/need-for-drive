@@ -3,22 +3,28 @@ import {HoverOverElementDirective} from './directives/hoverOverElement.directive
 import { LanguagesControlComponent } from './components/languages-control/languages-control.component';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatButtonModule} from '@angular/material/button';
-import {LayoutModule} from '../core/layout/layout.module';
+import {MainMenuComponent} from '../core/main-menu/main-menu.component';
+import {MatListModule} from '@angular/material/list';
+import {MatIconModule} from '@angular/material/icon';
+import {CommonModule} from '@angular/common';
 
 @NgModule({
   declarations: [
     HoverOverElementDirective,
     LanguagesControlComponent,
+    MainMenuComponent,
   ],
   imports: [
     MatMenuModule,
     MatButtonModule,
-    LayoutModule,
+    MatListModule,
+    MatIconModule,
+    CommonModule,
   ],
   exports: [
     HoverOverElementDirective,
     LanguagesControlComponent,
-    LayoutModule,
+    MainMenuComponent,
   ],
   providers: [],
 })

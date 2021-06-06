@@ -4,7 +4,7 @@
       <div class="booking-section">
         <div class="booking-header-left">{{'GENERAL.TITLE' | translate}}</div>
         <div class="booking-header-right">
-          <span class="location-icon"><img src="../../../assets/icons/location-icon.svg"></span>
+          <span class="location-icon"><img src="./../../../assets/icons/location-icon.svg"></span>
           <span class="location-title">Ульяновск</span>
         </div>
         <div class="booking-main">
@@ -25,11 +25,11 @@
         <button mat-button class="more-information-button">{{'MAIN PAGE.more information button' | translate}}</button>
       </div>
       <div *ngIf="sliders[state.value]" class="slid-left" (click)="slideLeft()">
-        <img src="../../../assets/icons/slid-left-icon.svg">
+        <img src="./../../../assets/icons/slid-left-icon.svg">
       </div>
       <img [src]="sliders[state.value]?.img || 'assets/images/image-not-found.jpg'" class="slide-image">
       <div *ngIf="sliders[state.value]" class="slid-right" (click)="slideRight()">
-        <img src="../../../assets/icons/slid-right-icon.svg">
+        <img src="./../../../assets/icons/slid-right-icon.svg">
       </div>
     </div>
 
