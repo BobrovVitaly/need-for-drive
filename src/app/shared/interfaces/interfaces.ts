@@ -17,3 +17,8 @@ export interface IMenuSectionSlider extends ISlider {
   title?: string;
   description?: string;
 }
+
+export interface ILocationGroup {
+  letter: string;
+  names: string[];
+}
