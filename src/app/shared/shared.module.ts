@@ -7,12 +7,14 @@ import {MainMenuComponent} from '../core/main-menu/main-menu.component';
 import {MatListModule} from '@angular/material/list';
 import {MatIconModule} from '@angular/material/icon';
 import {CommonModule} from '@angular/common';
+import { BreadcrumbsComponent } from './components/breadcrumbs/breadcrumbs.component';
 
 @NgModule({
   declarations: [
     HoverOverElementDirective,
     LanguagesControlComponent,
     MainMenuComponent,
+    BreadcrumbsComponent,
   ],
   imports: [
     MatMenuModule,
@@ -25,6 +27,7 @@ import {CommonModule} from '@angular/common';
     HoverOverElementDirective,
     LanguagesControlComponent,
     MainMenuComponent,
+    BreadcrumbsComponent,
   ],
   providers: [],
 })
