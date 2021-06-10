@@ -1,4 +1,4 @@
-<button mat-button [matMenuTriggerFor]="menu" class="open-menu-languages-button">{{currentLanguage}}</button>
+<button mat-button [matMenuTriggerFor]="menu" class="open-menu-languages-button">{{getLanguage() | async}}</button>
 <mat-menu #menu="matMenu" class="mat-menu-languages">
   <button mat-menu-item class="select-languages-button" (click)="setLanguage(LANGUAGES.Eng)">Eng</button>
   <button mat-menu-item class="select-languages-button" (click)="setLanguage(LANGUAGES.Rus)">Rus</button>

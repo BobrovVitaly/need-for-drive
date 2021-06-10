@@ -8,16 +8,15 @@ import {TranslateService} from '@ngx-translate/core';
 })
 export class LanguagesControlService {
 
+  private currentLanguage: BehaviorSubject<LANGUAGES> = new BehaviorSubject<LANGUAGES>(LANGUAGES.Rus);
+
   constructor(private translateService: TranslateService) {
     this.translateService.addLangs(['ru', 'en']);
     this.translateService.setDefaultLang('ru');
     this.currentLanguage.subscribe(language => {
-      console.log(language);
       this.translateService.use(language);
     });
   }
-
-  private currentLanguage: BehaviorSubject<LANGUAGES> = new BehaviorSubject<LANGUAGES>(LANGUAGES.Rus);
 
   public setLanguage(language: LANGUAGES): void {
     this.currentLanguage.next(language);
