@@ -95,15 +95,6 @@
   height: 100%;
 }
 
-.more-information-button {
-  background: linear-gradient(90deg, #13493F 0%, #0C7B1B 100%);
-  border-radius: 4px;
-  color: #EEEEEE;
-  @include getFontStyle(normal, 500, 18px, 21px);
-  padding: 14px 40px;
-  width: min-content;
-}
-
 @media (max-width: 500px) {
   .booking-section-wrapper {
     width: 100%;
@@ -164,7 +155,7 @@
       display: flex;
       justify-content: flex-end;
       @include getFontStyle(normal, 400, 13px, 16px);
-      color: #EEEEEE;
+      color: $very-light-gray;
     }
     &-footer-right {
       z-index: 2;

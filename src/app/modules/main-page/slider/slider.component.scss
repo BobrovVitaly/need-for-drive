@@ -16,21 +16,21 @@
 }
 
 .slider-card-title {
-  color: #FFFFFF;
+  color: white;
   @include getFontStyle(normal, 500, 40px, 47px);
 }
 
 .slider-card-description {
   margin-top: 8px;
   margin-bottom: 32px;
-  color: #EEEEEE;
+  color: $very-light-gray;
   @include getFontStyle(normal, 300, 24px, 24px);
 }
 
 .more-information-button {
   background: linear-gradient(90deg, #13493F 0%, #0C7B1B 100%);
   border-radius: 4px;
-  color: #EEEEEE;
+  color: $very-light-gray;
   @include getFontStyle(normal, 500, 18px, 21px);
   padding: 14px 40px;
   width: min-content;
@@ -44,7 +44,7 @@
   align-items: center;
   justify-content: center;
   &:hover {
-    background: #0EC261;
+    background: $main-green;
     opacity: 20%;
   }
 }
@@ -64,7 +64,7 @@
   right: 0;
   top: 0;
   &:hover {
-    background: #0EC261;
+    background: $main-green;
     opacity: 20%;
   }
 }
