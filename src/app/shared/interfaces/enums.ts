@@ -7,19 +7,19 @@ export enum LANGUAGES {
 
 export const MENUSECTIONS: IMenuSection[] = [
   {
-    img: 'assets/images/parking.jpg',
+    img: 'url(assets/images/parking.jpg)',
     route: 'parking',
   },
   {
-    img: 'assets/images/insurance.jpg',
+    img: 'url(assets/images/insurance.jpg)',
     route: 'insurance',
   },
   {
-    img: 'assets/images/petrol.jpg',
+    img: 'url(assets/images/petrol.jpg)',
     route: 'petrol',
   },
   {
-    img: 'assets/images/service.jpg',
+    img: 'url(assets/images/service.jpg)',
     route: 'service',
   }
 ];

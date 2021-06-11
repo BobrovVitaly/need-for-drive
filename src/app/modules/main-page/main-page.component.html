@@ -18,8 +18,14 @@
       </div>
     </div>
 
-    <div class="slider-section-wrapper">
-      <app-slider [state]=sliderState></app-slider>
+    <div class="slider-section-wrapper" [ngStyle]="{
+      background: sliders[sliderState.currentValue].img
+    }">
+      <app-slider
+        [slider]="sliders[sliderState.currentValue]"
+        (slideLeftEmitter)="slideLeft()"
+        (slideRightEmitter)="slideRight()"
+      ></app-slider>
     </div>
 
 </div>
