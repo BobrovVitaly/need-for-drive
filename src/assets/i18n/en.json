@@ -26,6 +26,6 @@
       "description": "Per-minute car rental in your city",
       "booking button": "Book now"
     },
-    "more information button": "more information"
+    "moreInformationButton": "more information"
   }
 }

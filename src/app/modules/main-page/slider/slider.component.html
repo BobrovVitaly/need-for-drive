@@ -1,0 +1,13 @@
+<div class="slider-card-information">
+  <span *ngIf="sliders[state.currentValue]?.title" class="slider-card-title">{{sliders[state.currentValue].title}}</span>
+  <span *ngIf="sliders[state.currentValue]?.description"
+        class="slider-card-description">{{sliders[state.currentValue].description}}</span>
+  <button mat-button class="more-information-button">{{'MAIN PAGE.moreInformationButton' | translate}}</button>
+</div>
+<div class="slid-left" (click)="slideLeft()">
+  <img src="./assets/icons/slid-left-icon.svg">
+</div>
+<img [src]="sliders[state.currentValue].img || 'assets/images/image-not-found.jpg'" class="slide-image">
+<div class="slid-right" (click)="slideRight()">
+  <img src="./assets/icons/slid-right-icon.svg">
+</div>

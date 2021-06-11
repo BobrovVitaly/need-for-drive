@@ -3,17 +3,14 @@ export interface ISection {
   title?: string;
 }
 
-export interface ILanguage {
-  value: string;
-  title: string;
-}
-
-export interface ISlider {
-  img: string;
+export interface IMenuSection {
+  title?: string;
+  description?: string;
+  img?: string;
   route?: string;
 }
 
-export interface IMenuSectionSlider extends ISlider {
-  title?: string;
-  description?: string;
+export interface ISliderState {
+  currentValue: number;
+  maxValue: number;
 }

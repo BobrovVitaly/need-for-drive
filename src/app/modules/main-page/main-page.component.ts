@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {TranslateService} from '@ngx-translate/core';
-import {IMenuSectionSlider} from '../../shared/interfaces/interfaces';
+import {IMenuSection, ISliderState} from '../../shared/interfaces/interfaces';
 import {BehaviorSubject} from 'rxjs';
 import {Router} from '@angular/router';
 
@@ -11,56 +11,18 @@ import {Router} from '@angular/router';
 })
 export class MainPageComponent implements OnInit {
 
-  public sliders: IMenuSectionSlider[] | undefined;
-  public state: BehaviorSubject<number>;
+  public sliders: IMenuSection[] | undefined;
+  public sliderState: ISliderState;
 
   constructor(private translate: TranslateService,
               private router: Router) {
   }
 
   ngOnInit(): void {
-    this.state = new BehaviorSubject(0);
-    this.sliders = [
-      {
-        img: 'assets/images/parking.jpg',
-        route: 'parking',
-      },
-      {
-        img: 'assets/images/insurance.jpg',
-        route: 'insurance',
-      },
-      {
-        img: 'assets/images/petrol.jpg',
-        route: 'petrol',
-      },
-      {
-        img: 'assets/images/service.jpg',
-        route: 'service',
-      }
-    ];
-    this.translate.setDefaultLang('ru');
-    this.translate.stream('MAIN PAGE.menu sections').subscribe(sections => {
-      this.sliders.map(slider => {
-        slider.title = sections[slider.route].title;
-        slider.description = sections[slider.route].description;
-      });
-    });
-  }
-
-  public slideLeft(): void {
-    if (this.state.value > 0) {
-      this.state.next(this.state.value - 1);
-    } else {
-      this.state.next(3);
-    }
-  }
-
-  public slideRight(): void {
-    if (this.state.value < 3) {
-      this.state.next(this.state.value + 1);
-    } else {
-      this.state.next(0);
-    }
+    this.sliderState = {
+      currentValue: 0,
+      maxValue: 4
+    };
   }
 
   public navigateToBooking(): void {

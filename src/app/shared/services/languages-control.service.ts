@@ -1,4 +1,4 @@
-import {Injectable} from '@angular/core';
+import {Injectable, OnDestroy} from '@angular/core';
 import {BehaviorSubject} from 'rxjs';
 import {LANGUAGES} from '../interfaces/enums';
 import {TranslateService} from '@ngx-translate/core';
@@ -13,7 +13,8 @@ export class LanguagesControlService {
   constructor(private translateService: TranslateService) {
     this.translateService.addLangs(['ru', 'en']);
     this.translateService.setDefaultLang('ru');
-    this.currentLanguage.subscribe(language => {
+    this.currentLanguage
+      .subscribe(language => {
       this.translateService.use(language);
     });
   }
