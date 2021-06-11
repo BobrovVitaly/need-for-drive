@@ -14,3 +14,8 @@ export interface ISliderState {
   currentValue: number;
   maxValue: number;
 }
+
+export interface IEmitIcon {
+  title: string;
+  src: string;
+}

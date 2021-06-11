@@ -10,8 +10,8 @@ import {SlidersControlService} from '../../../shared/services/sliders-control.se
 })
 export class SliderComponent {
   @Input() slider: IMenuSection;
-  @Output() slideLeftEmitter: EventEmitter<any> = new EventEmitter<any>();
-  @Output() slideRightEmitter: EventEmitter<any> = new EventEmitter<any>();
+  @Output() slideLeftEmitter: EventEmitter<void> = new EventEmitter<void>();
+  @Output() slideRightEmitter: EventEmitter<void> = new EventEmitter<void>();
 
   public slideLeft(): void {
     this.slideLeftEmitter.emit();

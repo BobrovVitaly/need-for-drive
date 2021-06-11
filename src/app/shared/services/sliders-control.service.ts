@@ -6,19 +6,17 @@ import {ISliderState} from '../interfaces/interfaces';
 })
 export class SlidersControlService {
 
-  constructor() { }
-
   public slideLeft(state: ISliderState): void {
     if (state.currentValue > 0) {
-      state.currentValue --;
+      state.currentValue--;
     } else {
       state.currentValue = 3;
     }
   }
 
   public slideRight(state: ISliderState): void {
-    if (state.currentValue < 3) {
-      state.currentValue ++;
+    if (state.currentValue < state.maxValue) {
+      state.currentValue++;
     } else {
       state.currentValue = 0;
     }

@@ -13,7 +13,7 @@ import {SlidersControlService} from '../../shared/services/sliders-control.servi
 })
 export class MainPageComponent implements OnInit {
 
-  public sliders: IMenuSection[] | undefined;
+  public sliders: IMenuSection[];
   public sliderState: ISliderState;
 
   constructor(private menuSectionsControlService: MenuSectionsControlService,
@@ -26,7 +26,7 @@ export class MainPageComponent implements OnInit {
     this.sliders = this.menuSectionsControlService.getMenuSections();
     this.sliderState = {
       currentValue: 0,
-      maxValue: 4
+      maxValue: 3
     };
   }
 
@@ -39,6 +39,6 @@ export class MainPageComponent implements OnInit {
   }
 
   public navigateToBooking(): void {
-    this.router.navigate(['booking']).then();
+    this.router.navigate(['booking']);
   }
 }

@@ -1,11 +1,16 @@
 @import '../../../../styles/variables';
 @import "../../../../styles/mixins";
 
+.slider-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 .slider-card-information {
   width: 30vw;
   display: flex;
   flex-direction: column;
-  padding-left: 100px;
   padding-top: 30vh;
   height: 100%;
 }
@@ -33,9 +38,8 @@
 
 .slid-left {
   cursor: pointer;
-  height: 100%;
+  height: 100vh;
   width: 64px;
-  position: fixed;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -52,9 +56,8 @@
 
 .slid-right {
   cursor: pointer;
-  height: 100%;
+  height: 100vh;
   width: 64px;
-  position: fixed;
   display: flex;
   align-items: center;
   justify-content: center;

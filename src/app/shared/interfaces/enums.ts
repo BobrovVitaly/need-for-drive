@@ -1,4 +1,4 @@
-import {IMenuSection} from './interfaces';
+import {IEmitIcon, IMenuSection} from './interfaces';
 
 export enum LANGUAGES {
   Rus = 'ru',
@@ -21,5 +21,20 @@ export const MENUSECTIONS: IMenuSection[] = [
   {
     img: 'url(assets/images/service.jpg)',
     route: 'service',
+  }
+];
+
+export const EMITICONS: IEmitIcon[] = [
+  {
+    title: 'telegram',
+    src: 'assets/icons/telegram-white-icon.svg'
+  },
+  {
+    title: 'facebook',
+    src: 'assets/icons/facebook-white-icon.svg'
+  },
+  {
+    title: 'instagram',
+    src: 'assets/icons/instagram-white-icon.svg'
   }
 ];

@@ -8,8 +8,6 @@
     </mat-list-option>
   </mat-selection-list>
   <div class="emit-icons">
-    <img src="assets/icons/telegram-white-icon.svg" class="emit-icon" appHoverOverElement>
-    <img src="assets/icons/facebook-white-icon.svg" class="emit-icon" appHoverOverElement>
-    <img src="assets/icons/instagram-white-icon.svg" class="emit-icon" appHoverOverElement>
+    <img *ngFor="let icon of emitIcons" [src]="icon.src" class="emit-icon" appHoverOverElement>
   </div>
 </div>

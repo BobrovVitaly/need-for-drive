@@ -19,7 +19,8 @@
     </div>
 
     <div class="slider-section-wrapper" [ngStyle]="{
-      background: sliders[sliderState.currentValue].img
+      backgroundImage: sliders[sliderState.currentValue]?.img || 'assets/images/image-not-found.jpg',
+      backgroundSize: 'cover'
     }">
       <app-slider
         [slider]="sliders[sliderState.currentValue]"

@@ -1,6 +1,8 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {ISection} from '../../shared/interfaces/interfaces';
+import {Component, EventEmitter, OnDestroy, OnInit, Output} from '@angular/core';
+import {IEmitIcon, IMenuSection} from '../../shared/interfaces/interfaces';
 import {TranslateService} from '@ngx-translate/core';
+import {MenuSectionsControlService} from '../../shared/services/menu-sections-control.service';
+import {EMITICONS} from '../../shared/interfaces/enums';
 
 @Component({
   selector: 'app-main-menu',
@@ -9,39 +11,18 @@ import {TranslateService} from '@ngx-translate/core';
 })
 export class MainMenuComponent implements OnInit {
 
-  @Output() openMenuEmitter: EventEmitter<any> = new EventEmitter<any>();
-  public sections: ISection[] | undefined;
+  @Output() openMenuEmitter: EventEmitter<void> = new EventEmitter<void>();
+  public sections: IMenuSection[];
+  public emitIcons: IEmitIcon[] = EMITICONS;
 
-  constructor(public translate: TranslateService) {
+  constructor(public translate: TranslateService,
+              private menuSectionsControlService: MenuSectionsControlService) {
   }
 
   ngOnInit(): void {
     this.translate.addLangs(['ru', 'en']);
     this.translate.setDefaultLang('ru');
-    this.sections = [
-      {
-        value: 'parking',
-        title: '',
-      },
-      {
-        value: 'insurance',
-        title: '',
-      },
-      {
-        value: 'petrol',
-        title: '',
-      },
-      {
-        value: 'service',
-        title: '',
-      },
-    ];
-    this.translate.setDefaultLang('ru');
-    this.translate.stream('MAIN PAGE.menu sections').subscribe(sections => {
-      this.sections.map(section => {
-        section.title = sections[section.value].title;
-      });
-    });
+    this.sections = this.menuSectionsControlService.getMenuSections();
   }
 
   sidenavToggle(): void {
