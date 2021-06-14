@@ -26,6 +26,6 @@
       "description": "Поминутная аренда авто твоего города",
       "booking button": "Забронировать"
     },
-    "more information button": "Подробнее"
+    "moreInformationButton": "Подробнее"
   }
 }

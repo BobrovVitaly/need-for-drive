@@ -1,8 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {TranslateService} from '@ngx-translate/core';
-import {IMenuSectionSlider} from '../../shared/interfaces/interfaces';
+import {IMenuSection, ISliderState} from '../../shared/interfaces/interfaces';
 import {BehaviorSubject} from 'rxjs';
 import {Router} from '@angular/router';
+import {MenuSectionsControlService} from '../../shared/services/menu-sections-control.service';
+import {SlidersControlService} from '../../shared/services/sliders-control.service';
 
 @Component({
   selector: 'app-main-page',
@@ -11,59 +13,32 @@ import {Router} from '@angular/router';
 })
 export class MainPageComponent implements OnInit {
 
-  public sliders: IMenuSectionSlider[] | undefined;
-  public state: BehaviorSubject<number>;
+  public sliders: IMenuSection[];
+  public sliderState: ISliderState;
 
-  constructor(private translate: TranslateService,
+  constructor(private menuSectionsControlService: MenuSectionsControlService,
+              private slidersControlService: SlidersControlService,
+              private translate: TranslateService,
               private router: Router) {
   }
 
   ngOnInit(): void {
-    this.state = new BehaviorSubject(0);
-    this.sliders = [
-      {
-        img: 'assets/images/parking.jpg',
-        route: 'parking',
-      },
-      {
-        img: 'assets/images/insurance.jpg',
-        route: 'insurance',
-      },
-      {
-        img: 'assets/images/petrol.jpg',
-        route: 'petrol',
-      },
-      {
-        img: 'assets/images/service.jpg',
-        route: 'service',
-      }
-    ];
-    this.translate.setDefaultLang('ru');
-    this.translate.stream('MAIN PAGE.menu sections').subscribe(sections => {
-      this.sliders.map(slider => {
-        slider.title = sections[slider.route].title;
-        slider.description = sections[slider.route].description;
-      });
-    });
-  }
-
-  public slideLeft(): void {
-    if (this.state.value > 0) {
-      this.state.next(this.state.value - 1);
-    } else {
-      this.state.next(3);
-    }
+    this.sliders = this.menuSectionsControlService.getMenuSections();
+    this.sliderState = {
+      currentValue: 0,
+      maxValue: 3
+    };
   }
 
   public slideRight(): void {
-    if (this.state.value < 3) {
-      this.state.next(this.state.value + 1);
-    } else {
-      this.state.next(0);
-    }
+    this.slidersControlService.slideRight(this.sliderState);
+  }
+
+  public slideLeft(): void {
+    this.slidersControlService.slideLeft(this.sliderState);
   }
 
   public navigateToBooking(): void {
-    this.router.navigate(['booking']).then();
+    this.router.navigate(['booking']);
   }
 }

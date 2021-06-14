@@ -1,0 +1,13 @@
+<div class="slider-card">
+  <div class="slider-card_slide" (click)="slideLeft()">
+    <img src="./assets/icons/slid-left-icon.svg">
+  </div>
+  <div *ngIf="slider" class="slider-card_information">
+    <span class="slider-card_title">{{slider.title}}</span>
+    <span class="slider-card_description">{{slider.description}}</span>
+    <button mat-button class="slider-card__button_more-information">{{'MAIN PAGE.moreInformationButton' | translate}}</button>
+  </div>
+  <div class="slider-card_slide" (click)="slideRight()">
+    <img src="./assets/icons/slid-right-icon.svg">
+  </div>
+</div>

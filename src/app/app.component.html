@@ -4,21 +4,18 @@
     <app-main-menu (openMenuEmitter)="sidenav.toggle()"></app-main-menu>
   </mat-sidenav>
 
-  <mat-sidenav-content class="mat-sidenav-content">
-    <div class="menu-section"></div>
-    <button mat-icon-button (click)="sidenav.toggle()" class="menu-button">
+  <mat-sidenav-content class="mat-sidenav__content">
+    <div class="menu__section"></div>
+    <button mat-icon-button (click)="sidenav.toggle()" class="menu__button">
       <mat-icon>menu</mat-icon>
     </button>
-    <div class="content-wrapper">
+    <main class="content_wrapper">
       <router-outlet></router-outlet>
-      <div class="mobile-footer"></div>
-    </div>
-    <div class="mat-menu-languages-container">
+      <footer class="mobile-footer"></footer>
+    </main>
+    <div class="mat-menu__languages_container">
       <app-languages-control></app-languages-control>
     </div>
   </mat-sidenav-content>
 
 </mat-sidenav-container>
-
-
-<!--<app-main-page></app-main-page>-->

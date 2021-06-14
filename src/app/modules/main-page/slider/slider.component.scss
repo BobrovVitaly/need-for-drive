@@ -1,0 +1,69 @@
+@import '../../../../styles/variables';
+@import "../../../../styles/mixins";
+
+.slider-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  &_information {
+    width: 30vw;
+    display: flex;
+    flex-direction: column;
+    padding-top: 30vh;
+    height: 100%;
+  }
+  &_title {
+    color: white;
+    @include getFontStyle(normal, 500, 40px, 47px);
+  }
+  &_description {
+    margin-top: 8px;
+    margin-bottom: 32px;
+    color: $very-light-gray;
+    @include getFontStyle(normal, 300, 24px, 24px);
+  }
+  &__button_more-information {
+    background: linear-gradient(90deg, #13493F 0%, #0C7B1B 100%);
+    border-radius: 4px;
+    color: $very-light-gray;
+    @include getFontStyle(normal, 500, 18px, 21px);
+    padding: 14px 40px;
+    width: min-content;
+  }
+  &_slide {
+    cursor: pointer;
+    height: 100vh;
+    width: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:hover {
+      background: $main-green;
+      opacity: 20%;
+    }
+  }
+}
+
+.slider-card_information {
+}
+
+.slider-card_title {
+}
+
+.slider-card_description {
+}
+
+.button_more-information {
+}
+
+.slider-card_left {
+}
+
+.slide-image {
+  width: 100%;
+  height: 100%;
+}
+
+.slider-card_right {
+
+}

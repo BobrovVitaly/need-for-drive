@@ -1,47 +1,29 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {LanguagesControlService} from '../../services/languages-control.service';
+import {LANGUAGES} from '../../interfaces/enums';
 import {BehaviorSubject} from 'rxjs';
-import {ILanguage} from '../../interfaces/interfaces';
-import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-languages-control',
   templateUrl: './languages-control.component.html',
   styleUrls: ['./languages-control.component.scss']
 })
-export class LanguagesControlComponent implements OnInit {
+export class LanguagesControlComponent {
 
-  public currentLanguage: BehaviorSubject<ILanguage> = new BehaviorSubject<ILanguage>({
-    value: 'ru',
-    title: 'rus'
-  });
+  public currentLanguage: LANGUAGES;
 
-  constructor(public translate: TranslateService) { }
-
-  ngOnInit(): void {
-    this.translate.addLangs(['ru', 'en']);
-    this.translate.setDefaultLang('ru');
-    this.currentLanguage.subscribe(language => {
-      this.translate.use(language.value);
-    });
+  constructor(public languagesControlService: LanguagesControlService) {
   }
 
-  public setLanguage(languageValue: string = 'ru'): void {
-    switch (languageValue) {
-      case 'ru': {
-        this.currentLanguage.next({
-          value: 'ru',
-          title: 'Rus'
-        });
-        break;
-      }
-      case 'en': {
-        this.currentLanguage.next({
-          value: 'en',
-          title: 'Eng'
-        });
-        break;
-      }
-    }
+  public get LANGUAGES(): typeof LANGUAGES {
+    return LANGUAGES;
   }
 
+  public setLanguage(language: LANGUAGES): void {
+    this.languagesControlService.setLanguage(language);
+  }
+
+  public getLanguage(): BehaviorSubject<LANGUAGES> {
+    return this.languagesControlService.getCurrentLanguage();
+  }
 }
