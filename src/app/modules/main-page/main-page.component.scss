@@ -1,24 +1,80 @@
 @import '../../../styles/variables';
 @import "../../../styles/mixins";
 
-.main-page-wrapper {
+.main-page_wrapper {
   display: flex;
   flex-direction: row;
   width: 100%;
   height: 100%;
 }
 
-.booking-section-wrapper {
-  height: 100%;
-  width: 50%;
-}
-
-.location-icon {
-  margin-right: 5px;
-}
-
 .booking {
-  &-section {
+  &__section {
+    &_wrapper {
+      width: 50%;
+      height: 100%;
+    }
+    &_header {
+      &-left {
+        grid-area: header;
+        @include getFontStyle(normal, 700, 30px, 36px);
+        color: $main-green;
+      }
+      &-right {
+        grid-area: header2;
+        @include getFontStyle(normal, 400, 14px, 16px);
+        color: $main-gray;
+        display: flex;
+        justify-content: flex-end;
+      }
+    }
+    &_location-icon {
+      margin-right: 5px;
+    }
+    &_main {
+      grid-area: main;
+      display: flex;
+      flex-direction: column;
+      &_row1 {
+        @include getFontStyle(normal, 700, 70px, 66px);
+        color: $main-black;
+      }
+      &_row2 {
+        margin-top: 4px;
+        @include getFontStyle(normal, 700, 70px, 66px);
+        color: $main-green;
+      }
+      &_row3 {
+        margin-top: 34px;
+        @include getFontStyle(normal, 300, 26px, 30px);
+        color: $main-gray;
+      }
+      &_navigate-button {
+        margin-top: 60px;
+        height: 48px;
+        width: 250px;
+        background: $gradient-green;
+        border-radius: 8px;
+        @include getFontStyle(normal, 500, 18px, 22px);
+        color: white;
+      }
+    }
+    &_footer-left {
+      grid-area: footer;
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-end;
+      @include getFontStyle(normal, 500, 18px, 22px);
+      color: $main-gray;
+    }
+    &_footer-right {
+      grid-area: footer2;
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+      @include getFontStyle(normal, 500, 18px, 22px);
+      color: $main-black;
+    }
     padding: 32px 5%;
     box-sizing: border-box;
     width: 100%;
@@ -30,151 +86,83 @@
                          "main main"
                          "footer footer2"
   }
-  &-header {
-    &-left {
-      grid-area: header;
-      @include getFontStyle(normal, 700, 30px, 36px);
-      color: $main-green;
-    }
-    &-right {
-      grid-area: header2;
-      @include getFontStyle(normal, 400, 14px, 16px);
-      color: $main-gray;
-      display: flex;
-      justify-content: flex-end;
-    }
-  }
-  &-main {
-    grid-area: main;
-    display: flex;
-    flex-direction: column;
-    &-row1 {
-      @include getFontStyle(normal, 700, 70px, 66px);
-      color: $main-black;
-    }
-    &-row2 {
-      margin-top: 4px;
-      @include getFontStyle(normal, 700, 70px, 66px);
-      color: $main-green;
-    }
-    &-row3 {
-      margin-top: 34px;
-      @include getFontStyle(normal, 300, 26px, 30px);
-      color: $main-gray;
-    }
-    &-button {
-      margin-top: 60px;
-      height: 48px;
-      width: 250px;
-      background: $gradient-green;
-      border-radius: 8px;
-      @include getFontStyle(normal, 500, 18px, 22px);
-      color: white;
-    }
-  }
-  &-footer-left {
-    grid-area: footer;
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-end;
-    @include getFontStyle(normal, 500, 18px, 22px);
-    color: $main-gray;
-  }
-  &-footer-right {
-    grid-area: footer2;
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    @include getFontStyle(normal, 500, 18px, 22px);
-    color: $main-black;
-  }
 }
 
-.slider-section-wrapper {
+.slider__section_wrapper {
   width: 50%;
-  height: 100%;
 }
 
 @media (max-width: 500px) {
-  .booking-section-wrapper {
+  .booking__section_wrapper {
     width: 100%;
   }
-  .menu-section {
-    display: none;
-  }
-  .slider-section-wrapper {
+  .slider__section_wrapper {
     display: none;
   }
   .mat-sidenav {
     width: 100%;
   }
-  .menu-button {
-    color: $main-black;
-  }
-  .mat-menu-languages-container {
-    bottom: 10px;
-  }
   .booking {
-    &-section {
+    &__section {
       padding: 16px 5%;
       box-sizing: border-box;
       display: flex;
       flex-direction: column;
-    }
-    &-header-left {
-      display: flex;
-      justify-content: flex-end;
-    }
-    &-main {
-      &-row1 {
-        @include getFontStyle(normal, 700, 32px, 32px);
-        margin-top: 5vh;
+      &_header-left {
+        display: flex;
+        justify-content: flex-end;
       }
-      &-row2 {
-        margin-top: 1vh;
-        @include getFontStyle(normal, 700, 32px, 32px);
+      &_main {
+        &_row1 {
+          @include getFontStyle(normal, 700, 32px, 32px);
+          margin-top: 5vh;
+        }
+        &_row2 {
+          margin-top: 1vh;
+          @include getFontStyle(normal, 700, 32px, 32px);
+          color: $main-green;
+        }
+        &_row3 {
+          margin-top: 3vh;
+          @include getFontStyle(normal, 300, 18px, 22px);
+          color: $main-gray;
+        }
+        &_navigate-button {
+          margin-top: 6vh;
+          height: 48px;
+          width: 110%;
+          right: 5%;
+          border-radius: 0;
+          @include getFontStyle(normal, 500, 18px, 22px);
+          color: white;
+        }
+      }
+      &_footer-left {
+        z-index: 2;
+        display: flex;
+        justify-content: flex-end;
+        @include getFontStyle(normal, 400, 13px, 16px);
+        color: $very-light-gray;
+      }
+      &_footer-right {
+        z-index: 2;
+        height: min-content;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        margin-top: auto;
+        @include getFontStyle(normal, 400, 13px, 16px);
         color: $main-green;
       }
-      &-row3 {
-        margin-top: 3vh;
-        @include getFontStyle(normal, 300, 18px, 22px);
-        color: $main-gray;
-      }
-      &-button {
-        margin-top: 6vh;
-        height: 48px;
-        width: 110%;
-        right: 5%;
-        border-radius: 0;
-        @include getFontStyle(normal, 500, 18px, 22px);
-        color: white;
-      }
-    }
-    &-footer-left {
-      z-index: 2;
-      display: flex;
-      justify-content: flex-end;
-      @include getFontStyle(normal, 400, 13px, 16px);
-      color: $very-light-gray;
-    }
-    &-footer-right {
-      z-index: 2;
-      height: min-content;
-      display: flex;
-      justify-content: flex-end;
-      align-items: flex-end;
-      margin-top: auto;
-      @include getFontStyle(normal, 400, 13px, 16px);
-      color: $main-green;
     }
   }
 }
 
 @media (min-width: 500px) and (max-width: 1000px) {
-  .slider-section-wrapper {
+  .slider__section_wrapper {
     display: none;
   }
-  .booking-section-wrapper {
+  .booking__section_wrapper {
     width: 100%;
   }
   .mat-sidenav {
