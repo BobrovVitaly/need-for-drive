@@ -1,7 +1,7 @@
 <button mat-icon-button (click)="sidenavToggle()" class="menu-button-close">
   <mat-icon>close</mat-icon>
 </button>
-<div class="sidenav-inner-container">
+<nav class="sidenav-inner-container">
   <mat-selection-list multiple="false">
     <mat-list-option *ngFor="let section of sections" class="section">
       {{section.title}}
@@ -10,4 +10,4 @@
   <div class="emit-icons">
     <img *ngFor="let icon of emitIcons" [src]="icon.src" class="emit-icon" appHoverOverElement>
   </div>
-</div>
+</nav>

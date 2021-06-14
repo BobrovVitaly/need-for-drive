@@ -1,6 +1,6 @@
 <div class="main-page-wrapper">
 
-    <div class="booking-section-wrapper">
+    <section class="booking-section-wrapper">
       <div class="booking-section">
         <div class="booking-header-left">{{'GENERAL.TITLE' | translate}}</div>
         <div class="booking-header-right">
@@ -16,9 +16,9 @@
         <div class="booking-footer-right">8 (495) 234-22-44</div>
         <div class="booking-footer-left">© 2016-2021 «Need for drive»</div>
       </div>
-    </div>
+    </section>
 
-    <div class="slider-section-wrapper" [ngStyle]="{
+    <section class="slider-section-wrapper" [ngStyle]="{
       backgroundImage: sliders[sliderState.currentValue]?.img || 'assets/images/image-not-found.jpg',
       backgroundSize: 'cover'
     }">
@@ -27,7 +27,7 @@
         (slideLeftEmitter)="slideLeft()"
         (slideRightEmitter)="slideRight()"
       ></app-slider>
-    </div>
+    </section>
 
 </div>
 
