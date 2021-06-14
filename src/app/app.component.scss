@@ -14,14 +14,14 @@
   background: $main-black;
 }
 
-.mat-sidenav-content {
+.mat-sidenav__content {
   display: flex;
   flex-direction: row;
   width: 100%;
   height: 100%;
 }
 
-.menu-section {
+.menu__section {
   background-color: $main-black;
   height: 100%;
   width: 70px;
@@ -30,14 +30,14 @@
   justify-content: space-between;
 }
 
-.menu-button {
+.menu__button {
   position: absolute;
   color: white;
   top: 10px;
   left: 10px;
 }
 
-.mat-menu-languages-container {
+.mat-menu__languages_container {
   position: fixed;
   z-index: 2;
   color: $main-green;
@@ -48,7 +48,7 @@
   color: $main-green;
 }
 
-.content-wrapper {
+.content_wrapper {
   width: 100%;
   height: 100%;
 }
@@ -60,10 +60,10 @@
   .menu__section {
     @include getFontStyle(normal, 400, 22px, 20px);
   }
-  .menu-section {
+  .menu__section {
     display: none;
   }
-  .menu-button {
+  .menu__button {
     color: $main-black;
   }
 
