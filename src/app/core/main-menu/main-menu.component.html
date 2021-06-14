@@ -1,13 +1,13 @@
-<button mat-icon-button (click)="sidenavToggle()" class="menu-button-close">
+<button mat-icon-button (click)="sidenavToggle()" class="menu__button_close">
   <mat-icon>close</mat-icon>
 </button>
-<nav class="sidenav-inner-container">
+<nav class="sidenav__inner-container">
   <mat-selection-list multiple="false">
-    <mat-list-option *ngFor="let section of sections" class="section">
+    <mat-list-option *ngFor="let section of sections" class="menu__section">
       {{section.title}}
     </mat-list-option>
   </mat-selection-list>
-  <div class="emit-icons">
-    <img *ngFor="let icon of emitIcons" [src]="icon.src" class="emit-icon" appHoverOverElement>
+  <div class="icons_emit">
+    <img *ngFor="let icon of emitIcons" [src]="icon.src" appHoverOverElement>
   </div>
 </nav>
