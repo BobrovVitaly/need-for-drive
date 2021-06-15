@@ -9,9 +9,9 @@
         </div>
         <div class="booking-main">
           <span class="booking-main-row1">{{'GENERAL.TITLE' | translate}}</span>
-          <span class="booking-main-row2">{{'MAIN PAGE.booking.header' | translate}}</span>
-          <span class="booking-main-row3">{{'MAIN PAGE.booking.description' | translate}}</span>
-          <button class="booking-main-button" mat-button (click)="navigateToBooking()">{{'MAIN PAGE.booking.booking button' | translate}}</button>
+          <span class="booking-main-row2">{{'MainPage.booking.header' | translate}}</span>
+          <span class="booking-main-row3">{{'MainPage.booking.description' | translate}}</span>
+          <button class="booking-main-button" mat-button (click)="navigateToBooking()">{{'MainPage.booking.booking button' | translate}}</button>
         </div>
         <div class="booking-footer-right">8 (495) 234-22-44</div>
         <div class="booking-footer-left">© 2016-2021 «Need for drive»</div>
@@ -22,7 +22,7 @@
       <div class="slider-card-information">
         <span *ngIf="sliders[state.value]?.title" class="slider-card-title">{{sliders[state.value].title}}</span>
         <span *ngIf="sliders[state.value]?.description" class="slider-card-description">{{sliders[state.value].description}}</span>
-        <button mat-button class="more-information-button">{{'MAIN PAGE.more information button' | translate}}</button>
+        <button mat-button class="more-information-button">{{'MainPage.more information button' | translate}}</button>
       </div>
       <div *ngIf="sliders[state.value]" class="slid-left" (click)="slideLeft()">
         <img src="./assets/icons/slid-left-icon.svg">

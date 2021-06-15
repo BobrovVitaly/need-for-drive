@@ -39,7 +39,7 @@ export class MainPageComponent implements OnInit {
       }
     ];
     this.translate.setDefaultLang('ru');
-    this.translate.stream('MAIN PAGE.menu sections').subscribe(sections => {
+    this.translate.stream('MainPage.menu sections').subscribe(sections => {
       this.sliders.map(slider => {
         slider.title = sections[slider.route].title;
         slider.description = sections[slider.route].description;

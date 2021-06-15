@@ -37,7 +37,7 @@ export class MainMenuComponent implements OnInit {
       },
     ];
     this.translate.setDefaultLang('ru');
-    this.translate.stream('MAIN PAGE.menu sections').subscribe(sections => {
+    this.translate.stream('MainPage.menu sections').subscribe(sections => {
       this.sections.map(section => {
         section.title = sections[section.value].title;
       });
