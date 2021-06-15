@@ -1,7 +1,18 @@
-
+@import '../../../../styles/variables';
+@import "../../../../styles/mixins";
 
 .locality {
   display: flex;
   flex-direction: column;
   margin-top: 5vh;
+  &__label {
+    @include getFontStyle(normal, 300, 14px, 16px);
+    color: $main-black;
+  }
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 300px;
+  }
 }

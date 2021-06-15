@@ -13,6 +13,7 @@ import {MatFormField, MatFormFieldModule} from '@angular/material/form-field';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import {RouterModule} from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -22,18 +23,19 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
     BreadcrumbsComponent,
     ChangeLocalityComponent,
   ],
-  imports: [
-    MatMenuModule,
-    MatButtonModule,
-    MatListModule,
-    MatIconModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatAutocompleteModule,
-    CommonModule,
-    FormsModule,
-    ReactiveFormsModule,
-  ],
+    imports: [
+        MatMenuModule,
+        MatButtonModule,
+        MatListModule,
+        MatIconModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatAutocompleteModule,
+        CommonModule,
+        FormsModule,
+        ReactiveFormsModule,
+        RouterModule,
+    ],
   exports: [
     HoverOverElementDirective,
     LanguagesControlComponent,

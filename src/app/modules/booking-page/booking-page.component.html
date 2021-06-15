@@ -1,17 +1,22 @@
-<div class="booking-page-wrapper">
+<div class="booking-page_wrapper">
   <div class="booking-page">
-    <div class="booking-page-header">
-      <span class="booking-page-title">{{'GENERAL.TITLE' | translate}}</span>
-      <span class="booking-page-location"><img src="./assets/icons/location-icon.svg" class="booking-page-location-icon">Ульяновск</span>
+    <div class="booking-page__header">
+      <span class="booking-page__header_title">{{'GENERAL.TITLE' | translate}}</span>
+      <span class="booking-page__header_location">
+        <img src="./assets/icons/location-icon.svg" class="booking-page__header_location_icon">Ульяновск
+      </span>
     </div>
-    <div class="breadcrumbs-wrapper">
+    <div class="booking-page__breadcrumbs_wrapper">
       <app-breadcrumbs></app-breadcrumbs>
     </div>
-    <div class="booking-page-main-content">
-      <div class="booking-page-main-content-left">
-        <app-change-locality></app-change-locality>
+    <div class="booking-page__main-content">
+      <div class="booking-page__main-content_left">
+        <router-outlet></router-outlet>
       </div>
-      <div class="booking-page-main-content-right"></div>
+      <div class="booking-page__main-content_right">
+        <h1 class="booking-page__main-content_right_title">Ваш заказ:</h1>
+        <app-order-status></app-order-status>
+      </div>
     </div>
   </div>
 </div>

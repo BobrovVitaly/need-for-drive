@@ -22,3 +22,8 @@ export interface ILocationGroup {
   letter: string;
   names: string[];
 }
+
+export interface IBreadCrumb {
+  label: string;
+  url: string;
+}

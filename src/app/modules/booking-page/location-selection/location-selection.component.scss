@@ -1,0 +1,12 @@
+@import '../../../../styles/variables';
+@import "../../../../styles/mixins";
+
+.map {
+  margin-top: 10vh;
+  max-width: 736px;
+  max-height: 352px;
+  &_label {
+    @include getFontStyle(normal, 300, 14px, 16px);
+    color: $main-black;
+  }
+}

@@ -1,3 +1,51 @@
-.breadcrumbs {
-  margin-left: 5vw;
+@import '../../../../styles/variables';
+@import "../../../../styles/mixins";
+
+.breadcrumb {
+  display: flex;
+  background: none;
+  list-style: none;
+  margin: 0;
+  padding: 20px 0;
+
+  &__item {
+    @include getFontStyle(normal, 500, 14px, 14px);
+    color: #2664c1;
+    margin-right: 5px;
+
+    &:last-child {
+      margin-right: 0;
+
+      a {
+        color: rgba($color: #22222f, $alpha: 0.5);
+      }
+    }
+
+    &:after {
+      content: '/';
+      color: rgba($color: #22222f, $alpha: 0.5);
+    }
+
+    &:last-child:after {
+      content: '';
+    }
+  }
+
+  &__link {
+    color: #2664c1;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .breadcrumb {
+    flex-wrap: wrap;
+    &__item {
+      @include getFontStyle(normal, 500, 12px, 12px);
+      padding: 10px 0;
+    }
+  }
 }
